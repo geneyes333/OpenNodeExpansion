@@ -58,7 +58,7 @@ export default function MirrorSpace() {
     <div style={{ padding: '2rem', maxWidth: 700, margin: '0 auto' }}>
       <Card>
         <CardContent>
-          <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: 16 }}>MirrorSpace: Creative Log</h2>
+          <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: 16 }}>OpenNodeExpansion</h2>
           <input
             type="file"
             accept="audio/*"
