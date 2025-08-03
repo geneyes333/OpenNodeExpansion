@@ -104,8 +104,15 @@ const generateDreamReflection = () => {
             Reflect Dream
           </Button>
           {dreamReflection && (
-            <Card style={{ backgroundColor: '#f4f4f4', padding: 16 }}>
-              <p>{dreamReflection}</p>
+            <Card style={{ 
+              marginTop: 24,
+              background: '#35355a',
+              borderRadius: 12,
+              padding: 18,
+              whiteSpace: 'pre-wrap'
+            }}>
+         <p style={{ color: '#ddd' }}>{dreamReflection}</p>
+
             </Card>
           )}
         </CardContent>
