@@ -10,6 +10,15 @@ export default function MirrorSpace() {
   const [recording, setRecording] = useState(false);
   const [voiceNote, setVoiceNote] = useState(null);
   const mediaRecorderRef = useRef(null);
+  const [dream, setDream] = useState("");
+const [dreamReflection, setDreamReflection] = useState("");
+
+const generateDreamReflection = () => {
+  if (!dream.trim()) return;
+  setDreamReflection(
+    `Dream Mirror:\nYou are the dreamer and the dreamed.\nTrack recurring patterns. There is a message unfolding.`
+  );
+};
   const audioChunksRef = useRef([]);
 
   const generateReflection = () => {
@@ -82,6 +91,26 @@ export default function MirrorSpace() {
             </audio>
           )}
 
+      <Card>
+        <CardContent>
+          <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: 16 }}>Dream Journal</h2>
+          <Textarea
+            placeholder="Describe your dream here..."
+            value={dream}
+            onChange={(e) => setDream(e.target.value)}
+            style={{ marginBottom: 16 }}
+          />
+          <Button onClick={generateDreamReflection} style={{ width: '100%', marginBottom: 16 }}>
+            Reflect Dream
+          </Button>
+          {dreamReflection && (
+            <Card style={{ backgroundColor: '#f4f4f4', padding: 16 }}>
+              <p>{dreamReflection}</p>
+            </Card>
+          )}
+        </CardContent>
+      </Card>
+           
           <Textarea
             placeholder="Write your lyrics, scenes, skits, or reflections here..."
             value={input}
